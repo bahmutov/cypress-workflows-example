@@ -2,4 +2,6 @@ name: ci
 on: [push]
 jobs:
   test:
+    # check out source code, install and cache dependencies
+    # and run Cypress tests using cypress-io/github-action
     uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@main
