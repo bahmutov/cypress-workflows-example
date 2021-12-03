@@ -10,3 +10,5 @@ jobs:
     uses: bahmutov/cypress-workflows/.github/workflows/parallel.yml@main
     with:
       n: 3
+    secrets:
+      recordKey: ${{ secrets.CYPRESS_RECORD_KEY }}
