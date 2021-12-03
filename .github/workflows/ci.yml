@@ -2,4 +2,4 @@ name: ci
 on: [push]
 jobs:
   test:
-    uses: bahmutov/cypress-workflows/standard.yml@main
+    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@main
