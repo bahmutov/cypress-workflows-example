@@ -4,4 +4,9 @@ jobs:
   test:
     # check out source code, install and cache dependencies
     # and run Cypress tests using cypress-io/github-action
-    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@main
+    # using a single machine
+    # uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@main
+    # using N machines in parallel
+    uses: bahmutov/cypress-workflows/.github/workflows/parallel.yml@main
+    with:
+      n: 3
