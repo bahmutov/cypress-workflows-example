@@ -20,7 +20,7 @@ jobs:
     uses: bahmutov/cypress-workflows/.github/workflows/parallel.yml@v1
     with:
       n: 3
-      # group: parallel tests
-      # tag: parallel
+      group: parallel tests
+      tag: parallel
     secrets:
       recordKey: ${{ secrets.CYPRESS_RECORD_KEY }}
