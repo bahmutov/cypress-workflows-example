@@ -1,7 +1,19 @@
 name: ci
 on: [push]
 jobs:
-  test:
+  standard-test:
+    # check out source code, install and cache dependencies
+    # and run Cypress tests using cypress-io/github-action
+    # using a single machine
+    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@v1
+    with:
+      record: true
+      group: single
+      tag: standard
+    secrets:
+      recordKey: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+  parallel-test:
     # check out source code, install and cache dependencies
     # and run Cypress tests using cypress-io/github-action
     # using a single machine
@@ -10,5 +22,7 @@ jobs:
     uses: bahmutov/cypress-workflows/.github/workflows/parallel.yml@v1
     with:
       n: 3
+      # group: parallel tests
+      # tag: parallel
     secrets:
       recordKey: ${{ secrets.CYPRESS_RECORD_KEY }}
